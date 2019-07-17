@@ -1,0 +1,64 @@
+@import "./mixin"; 
+
+.aboutMe {
+	&__wrapper {
+		@include wrapper; 
+		margin-top: 25px;
+		@media (max-width: 768px) {
+			padding: 0 20px 0 20px;
+		}
+	}
+	&__title {
+		@include title; 
+	}
+	&__text {
+		@include text; 
+		margin-top: 10px;
+	}
+	&__form {
+		margin-top: 33px;
+	}
+	&__input {
+		background: url("../../images/line-input.svg");
+		background-size: 105%;
+		border: none;
+		outline: none;
+		width: 100%;
+		font-size: 30px;
+		font-family: cour;
+		color: #231f20;
+		background-position-y: 5px;
+		margin-bottom: 6px;
+		padding-bottom: 18px;
+		flex-grow: 1;
+		background-position-x: -22px;
+		padding-right: 0;
+		@media (max-width: 650px) {
+			width: 100%;
+			padding-left: 10px;
+			background-position-x: -20px;
+			background-position-y: 20px;
+			margin-bottom: 6px;
+			padding-bottom: 24px;
+			background-repeat: no-repeat;
+		}
+		@media (max-width: 470px) {
+			font-size: 20px;
+		}
+
+		@include placeholder {
+			font-size: 30px;
+			font-family: cour;
+			color: #231f20;
+			margin-bottom: 20px;
+			vertical-align: text-top;
+			@media (max-width: 650px) {
+				font-size: 18px;
+			}
+			@media (max-width: 420px) {
+				font-size: 12px;
+				padding-left: 0;
+			}
+		}
+	}
+}

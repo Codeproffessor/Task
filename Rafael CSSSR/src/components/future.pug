@@ -1,0 +1,17 @@
+.future__wrapper
+  .future__descriptions
+    p(class="future__title") Какие у вас планы на будущее?
+    p(class="future__text") Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
+  form(name="future" class="future__form")
+    .future__item
+      input(type="radio" name="future-plan" id="future-html" class="future__form-input" placeholder="")
+      label(for="future-html" class="future__form-label") Верстать
+    .future__item
+      input(type="radio" name="future-plan" id="future-js" class="future__form-input" placeholder="" checked)
+      label(for="future-js" class="future__form-label") Прокачиваться в JS  
+    .future__item  
+      input(type="radio" name="future-plan" id="future-menedger" class="future__form-input" placeholder="")
+      label(for="future-menedger" class="future__form-label") Менеджерство
+    .future__item  
+      input(type="radio" name="future-plan" id="future-other" class="future__form-input" placeholder="")
+      label(for="future-other" class="future__form-label") Другое

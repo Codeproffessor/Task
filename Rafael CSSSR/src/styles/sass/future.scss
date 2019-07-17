@@ -1,0 +1,63 @@
+@import "./mixin"; 
+.future {
+	&__wrapper {
+    @include wrapper; 
+    margin: auto;
+    margin-top: 10px;
+		margin-bottom: 70px;
+		@media (max-width: 768px) {
+			padding: 0 20px 0 20px;
+		}
+	}
+	&__title {
+		@include title;
+	}
+	&__text {
+		@include text; 
+	}
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__item {
+		margin-left: 30px;
+		min-width: 80px;
+		margin-right: 20px;
+		@media (max-width: 560px) {
+			width: 100%;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__form-input {
+		display: none;
+	}
+	&__form-input:checked + &__form-label {
+		&::before {
+			content: "";
+			width: 41px;
+			height: 35px;
+			background: url(../../images/icon-radio-button-check.svg) no-repeat;
+			position: absolute;
+		}
+	}
+	&__form-label {
+		position: relative;
+		font-size: 21px;
+		font-family: PtSanas-bold;
+		color: #000000;
+		line-height: 35px;
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 41px;
+			height: 35px;
+			position: absolute;
+			left: -40px;
+			top: -11px;
+			background: url(../../images/icon-radio-button.svg) no-repeat;
+		}
+	}
+}

@@ -1,0 +1,57 @@
+@import "./mixin"; 
+
+.footer {
+	&__wrapper {
+		@include wrapper; 
+		margin-top: 10px;
+		padding-bottom: 65px;
+		@media (max-width: 768px) {
+			padding: 0 20px 65px 20px;
+		}
+	}
+	&__form-date {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__label {
+		position: relative;
+		font-size: 21px;
+		font-family: PtSanas-bold;
+		color: #000000;
+		line-height: 35px;
+		margin-right: 8px;
+	}
+	&__input {
+		background: url("../../images/footer-line-input.svg") no-repeat;
+		border: none;
+		outline: none;
+		font-size: 30px;
+		font-family: cour;
+		color: #231f20;
+		background-position-y: 22px;
+		padding-bottom: 0;
+		background-position-x: -21px;
+		padding-right: 0;
+		background-size: 110% 100%;
+		margin-top: -35px;
+		width: 208px;
+		padding-left: 5px;
+		@media (max-width: 420px) {
+			margin-top: 10px;
+			background-position-y: 18px;
+			padding-bottom: 15px;
+		}
+
+		@include placeholder {
+			font-size: 30px;
+			font-family: cour;
+			color: #231f20;
+			margin-bottom: 20px;
+			vertical-align: text-top;
+			padding-left: 5px;
+			@media (max-width: 420px) {
+				padding-left: 0;
+			}
+		}
+	}
+}

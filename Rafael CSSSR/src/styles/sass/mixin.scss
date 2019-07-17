@@ -1,0 +1,37 @@
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+
+@mixin title {
+	font-size: 24px;
+	font-family: PtSanas-bold;
+	color: #2f1b15;
+	margin-bottom: 0;
+}
+
+@mixin text {
+	font-size: 15px;
+	font-family: pt-sans-regular;
+	color: #3d3d3d;
+	line-height: 23px;
+	margin-top: 3px;
+}
+
+@mixin wrapper {
+	position: relative;
+	max-width: 770px;
+	margin: auto;
+}

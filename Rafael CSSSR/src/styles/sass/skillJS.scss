@@ -1,0 +1,155 @@
+@import "./mixin"; 
+
+.skillJS {
+	&__wrapper {
+		@include wrapper; 
+		@media (max-width: 768px) {
+			padding: 0 20px 0 20px;
+		}
+	}
+	&__title {
+		@include title; 
+	}
+	&__slider {
+		position: relative;
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 55px;
+			background: url(../../images/header-background-skill-slider.svg) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: -6px;
+			@media (max-width: 768px) {
+				background-size: 100% 100%;
+				top: -3px;
+			}
+		}
+		.owl-stage-outer {
+			padding-top: 25px;
+			margin-right: -6px;
+
+			@media (max-width: 420px) {
+				display: block;
+			}
+			.owl-stage {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+			
+				@media (min-width: 770px) {
+					.owl-item {
+						&:first-child {
+							.skillJS__item-slider {
+								&::before {
+									display: none;
+								}
+							}
+						}
+						&:last-child {
+							.skillJS__item-slider {
+								&::before {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+				@media (max-width: 768px) {
+					.owl-item {
+						&.active {
+							&:last-child {
+								.skillJS__item-slider {
+									&::before {
+										display: none;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&__description {
+		color: #2f1b15;
+		font-family: PtSanas-bold;
+		font-size: 13px;
+		margin: 0;
+		padding-top: 5px;
+	}
+	&__item-slider {
+		position: relative;
+		margin-top: 0;
+		padding-left: 4px;
+		padding-top: 20px;
+		@media (max-width: 460px) {
+			padding-left: 0;
+		}
+		&::before {
+			content: "";
+			display: block;
+			height: 20px;
+			width: 12px;
+			background-size: contain;
+			position: absolute;
+			background: url(../../images/line-item-slider-skills.svg) no-repeat;
+			top: -1px;
+			left: -2px;
+			@media (max-width: 768px) {
+				top: 0;
+				left: -3px;
+			}
+		}
+
+		&.active-skills {
+			&::after {
+				content: "";
+				display: block;
+				height: 20px;
+				width: 16px;
+				background-size: contain;
+				position: absolute;
+				background: url(../../images/icon-slider-skills-check.svg) no-repeat;
+				top: -22px;
+				left: -2px;
+			}
+		}
+	}
+}
+
+
+.first-active {
+	.skillJS__item-slider {
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.last-active {
+	display: flex;
+	justify-content: flex-end;
+	.skillJS {
+		&__item-slider {
+			display: flex;
+			justify-content: flex-end;
+			&::before {
+				display: none;
+			}
+			&::after {
+				position: absolute;
+				right: -6px;
+				left: auto;
+			}
+		}
+		&__description {
+			white-space: nowrap;
+			@media (max-width: 410px) {
+				white-space: normal;
+				text-align: right;
+			}
+		}
+	}
+}
